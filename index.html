@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethical Jail Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text color */
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #6a0dad; /* Purple button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #8a2be2; /* Lighter purple on hover */
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #6a0dad; /* Purple border */
+            border-radius: 5px;
+            background-color: #1e1e1e; /* Dark input background */
+            color: #e0e0e0; /* Light text color */
+        }
+        input[type="text"]::placeholder {
+            color: #a0a0a0; /* Placeholder text color */
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d1a3ff; /* Light purple text for output */
+            width: 80%;
+            margin-right: auto;
+            margin-left: auto;
+            background-color: #1e1e1e; /* Dark output background */
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #6a0dad; /* Purple border */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ethical Jail Generator</h1>
+    <p>Enter your name and find out what ethical crime you've been framed for!</p>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="generateScenario()">Generate</button>
+    <p id="output"></p>
+
+    <script>
+        function generateScenario() {
+            const name = document.getElementById("nameInput").value || "Alex";
+            
+            const setups = [
+                "was caught on security cameras... but the footage was clearly deepfaked!",
+                "was framed by an AI chatbot that manipulated chat logs!",
+                "became the victim of an elaborate phishing scheme that made it look like they leaked sensitive data!",
+                "was sabotaged by an anonymous hacker who used their login to commit digital crimes!",
+                "was set up by a rogue intern looking for revenge!",
+                "had their social media hacked, posting unethical company policies under their name!"
+            ];
+            
+            const crimes = [
+                "accidentally training an AI to insult customers instead of helping them",
+                "selling company secrets in exchange for free WiFi at a coffee shop",
+                "creating an AI that only responds in pirate slang, confusing all customers",
+                "mistakenly setting employee passwords to 'password123' for security",
+                "telling ChatGPT to write their homework, but it cited Wikipedia too many times"
+            ];
+            
+            const punishments = [
+                "must spend 3 days only communicating in corporate buzzwords",
+                "is sentenced to write 100 lines of 'I will not let AI order pineapple on pizza'",
+                "must explain GDPR laws to a group of toddlers",
+                "is forced to use dial-up internet for a week",
+                "has to watch 10 hours of corporate training videos on workplace ethics"
+            ];
+            
+            const setup = setups[Math.floor(Math.random() * setups.length)];
+            const crime = crimes[Math.floor(Math.random() * crimes.length)];
+            const punishment = punishments[Math.floor(Math.random() * punishments.length)];
+            
+            document.getElementById("output").innerText = `🚔 In a shocking turn of events, ${name} ${setup} Now, they are being blamed for ${crime}! As a result, ${name} ${punishment}. Justice must be served... or must it? 🤔`;
+        }
+    </script>
+</body>
+</html>
