@@ -5,50 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethical Jail Generator</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             text-align: center;
             margin: 50px;
-            background-color: #121212; /* Dark background */
+            background-color: #0d0d0d; /* Darker background */
             color: #e0e0e0; /* Light text color */
         }
+        h1 {
+            color: #8a2be2; /* Purple accent */
+            text-shadow: 0 0 10px #8a2be2, 0 0 20px #8a2be2;
+        }
         button {
-            padding: 10px 20px;
-            font-size: 16px;
+            padding: 15px 30px;
+            font-size: 18px;
             cursor: pointer;
             background-color: #6a0dad; /* Purple button */
             color: white;
             border: none;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 0 10px #6a0dad, 0 0 20px #6a0dad;
         }
         button:hover {
             background-color: #8a2be2; /* Lighter purple on hover */
+            transform: scale(1.1);
         }
         input[type="text"] {
-            padding: 10px;
-            font-size: 16px;
+            padding: 15px;
+            font-size: 18px;
             border: 1px solid #6a0dad; /* Purple border */
             border-radius: 5px;
             background-color: #1e1e1e; /* Dark input background */
             color: #e0e0e0; /* Light text color */
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 0 10px #6a0dad;
         }
         input[type="text"]::placeholder {
             color: #a0a0a0; /* Placeholder text color */
         }
         #output {
             margin-top: 20px;
-            font-size: 18px;
+            font-size: 20px;
+            font-family: 'Roboto', sans-serif; /* More readable font */
             color: #d1a3ff; /* Light purple text for output */
             width: 80%;
+            height: 50%;
+            max-width: 600px;
             margin-right: auto;
             margin-left: auto;
             background-color: #1e1e1e; /* Dark output background */
             padding: 20px;
             border-radius: 5px;
             border: 1px solid #6a0dad; /* Purple border */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 10px #6a0dad;
             transition: transform 0.3s ease;
+        }
+        #output:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -69,25 +86,98 @@
                 "became the victim of an elaborate phishing scheme that made it look like they leaked sensitive data!",
                 "was sabotaged by an anonymous hacker who used their login to commit digital crimes!",
                 "was set up by a rogue intern looking for revenge!",
-                "had their social media hacked, posting unethical company policies under their name!"
+                "had their social media hacked, posting unethical company policies under their name!",
+                "was accused of training an AI to create memes that violate copyright laws!",
+                "was blamed for a self-driving car accident caused by a software bug!",
+                "was framed for leaking confidential data through a compromised smart fridge!",
+                "was accused of creating a botnet that spams cat pictures!",
+                "was blamed for a rogue AI that started ordering pineapples on pizza!",
+                "was accused of hacking into a government database to change their birth year!",
+                "was framed for creating a virus that only affects coffee machine firmware!",
+                "was blamed for a glitch in a virtual reality game that caused chaos!",
+                "was accused of using AI to generate fake reviews for their favorite restaurant!",
+                "was framed for a cryptocurrency scam involving AI-generated wallets!",
+                "was blamed for a drone delivering pizzas to the wrong addresses!",
+                "was accused of creating a chatbot that only speaks in riddles!",
+                "was framed for a smart home system locking people out of their houses!",
+                "was blamed for a glitch in a fitness tracker that overestimated calories burned!",
+                "was accused of creating a deepfake video of their boss singing karaoke!",
+                "was framed for a smart assistant ordering 100 rolls of toilet paper!",
+                "was blamed for a glitch in a weather app predicting snow in summer!",
+                "was accused of creating an AI that only responds in Shakespearean English!",
+                "was framed for a smart car refusing to stop at red lights!",
+                "was blamed for a glitch in a stock trading bot causing market chaos!",
+                "was accused of creating a virtual assistant that only speaks in pirate slang!",
+                "was framed for a smart fridge ordering 50 gallons of milk!",
+                "was blamed for a glitch in a dating app matching people with their exes!",
+                "was accused of creating a bot that spams motivational quotes!",
+                "was framed for a smart speaker playing loud music at 3 AM!",
+                "was blamed for a glitch in a language translation app causing diplomatic issues!",
+                "was accused of creating an AI that only responds with memes!",
+                "was framed for a smart thermostat setting the temperature to 100°F!",
+                "was blamed for a glitch in a ride-sharing app causing chaos!",
+                "was accused of creating a bot that spams random emojis!",
+                "was framed for a smart watch sending embarrassing texts!",
+                "was blamed for a glitch in a video streaming app showing the wrong subtitles!",
+                "was accused of creating an AI that only speaks in haikus!",
+                "was framed for a smart vacuum cleaner drawing crop circles!",
+                "was blamed for a glitch in a music app playing the wrong songs!",
+                "was accused of creating a bot that spams random facts!",
+                "was framed for a smart mirror showing distorted reflections!",
+                "was blamed for a glitch in a gaming console causing crashes!",
+                "was accused of creating an AI that only speaks in riddles!",
+                "was framed for a smart assistant ordering random items online!",
+                "was blamed for a glitch in a fitness app overestimating steps!",
+                "was accused of creating a bot that spams random jokes!",
+                "was framed for a smart home system turning off lights randomly!"
             ];
-            
+
             const crimes = [
                 "accidentally training an AI to insult customers instead of helping them",
                 "selling company secrets in exchange for free WiFi at a coffee shop",
                 "creating an AI that only responds in pirate slang, confusing all customers",
                 "mistakenly setting employee passwords to 'password123' for security",
-                "telling ChatGPT to write their homework, but it cited Wikipedia too many times"
+                "telling ChatGPT to write their homework, but it cited Wikipedia too many times",
+                "using a chatbot to prank call their boss",
+                "teaching an AI to generate fake invoices",
+                "accidentally deleting the company database while trying to fix a bug",
+                "training an AI to write poetry that offends everyone",
+                "creating a bot that spams '404 Error' messages to random websites",
+                "leaking confidential data by syncing it to their smart watch",
+                "using AI to generate fake meeting notes that confused the entire team",
+                "teaching a chatbot to respond sarcastically to customer complaints",
+                "accidentally sending a company-wide email with a meme instead of a report",
+                "training an AI to generate fake resumes for job applications",
+                "using a smart assistant to order pizza during a board meeting",
+                "teaching an AI to generate fake weather forecasts",
+                "accidentally crashing the company website by testing a chatbot",
+                "teaching an AI to generate fake news articles",
+                "using a bot to spam their favorite song on a music app"
             ];
-            
+
             const punishments = [
                 "must spend 3 days only communicating in corporate buzzwords",
                 "is sentenced to write 100 lines of 'I will not let AI order pineapple on pizza'",
                 "must explain GDPR laws to a group of toddlers",
                 "is forced to use dial-up internet for a week",
-                "has to watch 10 hours of corporate training videos on workplace ethics"
+                "has to watch 10 hours of corporate training videos on workplace ethics",
+                "must manually sort 10,000 lines of code without an IDE",
+                "is banned from using emojis for a month",
+                "must write a 10-page essay on the ethics of AI",
+                "is forced to use a flip phone for a week",
+                "must attend a seminar on 'How to Avoid AI Misuse'",
+                "is sentenced to debug a legacy codebase written in assembly",
+                "must write apology emails to everyone affected by their AI bot",
+                "is forced to use a typewriter for all communications",
+                "must explain AI ethics to a group of kindergarteners",
+                "is banned from using smart devices for a month",
+                "must write 500 lines of 'I will not misuse AI for personal gain'",
+                "is sentenced to use Internet Explorer for a week",
+                "must attend a workshop on 'AI and the Law'",
+                "is forced to use a computer with no mouse for a week",
+                "must explain their actions to a panel of AI experts"
             ];
-            
+
             const setup = setups[Math.floor(Math.random() * setups.length)];
             const crime = crimes[Math.floor(Math.random() * crimes.length)];
             const punishment = punishments[Math.floor(Math.random() * punishments.length)];
